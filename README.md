@@ -1,2 +1,3 @@
 # python-exercise
-used for python code pratices
+This folder is used for python code pratices
+
