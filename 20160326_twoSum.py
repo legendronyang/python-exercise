@@ -30,12 +30,12 @@ class Solution(object):
         :rtype: List[int]
         """
         for i in range(len(nums)):
-			try:
-				for j in range(i+1, len(nums)):
-					if nums[i] + nums[j] == target:
-						raise StopIteration
-			except StopIteration:
-				break
+		try:
+			for j in range(i+1, len(nums)):
+				if nums[i] + nums[j] == target:
+					raise StopIteration
+		except StopIteration:
+			break
 
         return [i,j]
 
