@@ -6,7 +6,7 @@ Two Sum: https://leetcode.com/problems/two-sum/
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution.
 '''
-class Solution(object):
+class Solution_first(object):
     def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -19,6 +19,23 @@ class Solution(object):
                     break
             if nums[i] + nums[j] == target:
                 break
+
+        return [i,j]
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i in range(len(nums)):
+			try:
+				for j in range(i+1, len(nums)):
+					if nums[i] + nums[j] == target:
+						raise StopIteration
+			except StopIteration:
+				break
 
         return [i,j]
 
