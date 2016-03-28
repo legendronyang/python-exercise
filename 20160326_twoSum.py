@@ -45,8 +45,8 @@ import unittest
 
 class TestSolution_twoSum(unittest.TestCase):
 	def test_twoSum(self):
-		self.assertTrue(mySolution.twoSum([3,2,4],6), [1,2])
-		self.assertTrue(mySolution.twoSum([3,2,4],7), [0,2])
+		self.assertEqual(mySolution.twoSum([3,2,4],6), [1,2])
+		self.assertEqual(mySolution.twoSum([3,2,4],7), [0,2])
 
 suite = unittest.TestLoader().loadTestsFromTestCase(TestSolution_twoSum)
 unittest.TextTestRunner(verbosity=2).run(suite)
