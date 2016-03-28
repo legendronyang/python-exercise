@@ -37,10 +37,13 @@ class Test_Solution_isAnagram(unittest.TestCase):
 
 	def test_isAnagram_True(self):
 		self.assertTrue(mySolution.isAnagram("anagram", "nagaram"), True)
+		self.assertTrue(mySolution.isAnagram("b", "b"), True)
+		self.assertTrue(mySolution.isAnagram("bbaa", "aabb"), True)
 		
 	def test_isAnagram_False(self):
 		self.assertFalse(mySolution.isAnagram("rat", "car"), False)
  		self.assertFalse(mySolution.isAnagram("anagram", "nagam"), False)
+ 		self.assertFalse(mySolution.isAnagram("a", "x"), False)
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_Solution_isAnagram)
 unittest.TextTestRunner(verbosity=2).run(suite)            
