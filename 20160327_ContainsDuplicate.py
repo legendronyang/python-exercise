@@ -44,11 +44,11 @@ import unittest
 class Test_Solution_containsDuplicate(unittest.TestCase):
 
 	def test_contrainsDuplicate_True(self):
-		self.assertTrue(mySolution.containsDuplicate([1,2,2]), True)
+		self.assertEqual(mySolution.containsDuplicate([1,2,2]), True)
 		
 	def test_contrainsDuplicate_False(self):
-		self.assertFalse(mySolution.containsDuplicate([1,2,3]), False)
- 		self.assertFalse(mySolution.containsDuplicate([1,5,6,7,8,9]), False)
+		self.assertEqual(mySolution.containsDuplicate([1,2,3]), False)
+ 		self.assertEqual(mySolution.containsDuplicate([1,5,6,7,8,9]), False)
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_Solution_containsDuplicate)
 unittest.TextTestRunner(verbosity=2).run(suite)
