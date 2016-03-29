@@ -9,6 +9,7 @@ You may assume that the version strings are non-empty and contain only digits an
 The . character does not represent a decimal point and is used to separate number sequences.
 For instance, 2.5 is not "two and a half" or "half way to version three", 
 it is the fifth second-level revision of the second first-level revision.
+
 '''
 
 class Solution(object):
