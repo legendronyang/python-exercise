@@ -43,7 +43,7 @@ import unittest
 
 class Test_Solution_myUnitTest(unittest.TestCase):
 
-	def test_titleToNumber(self):
+	def test_myUnitTest(self):
 		self.assertEqual(mySolution.myUnitTest(4), True)
 		self.assertEqual(mySolution.myUnitTest(5), False)
 		self.assertEqual(mySolution.myUnitTest(2 ** 100000000), True)
