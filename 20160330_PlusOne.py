@@ -7,7 +7,7 @@ Given a non-negative number represented as an array of digits, plus one to the n
 The digits are stored such that the most significant digit is at the head of the list.
 '''
 
-class Solution(object):
+class Solution1(object):
     def plusOne(self, digits):
         """
         :type digits: List[int]
@@ -28,7 +28,25 @@ class Solution(object):
                 digits[index] += 1
                 break
         return digits                    
+
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """ 
+        digitsStr = ''
+        retList = []
+        for i in digits:
+            digitsStr += str(i)
+        print "digitStr is", digitsStr
+        retList = list(str(int(digitsStr) + 1))
         
+        for i in range(len(retList)) :
+            retList[i] = int(retList[i])
+        print "retList:", retList
+        return retList
+                
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
 
