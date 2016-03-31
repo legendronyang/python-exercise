@@ -32,7 +32,7 @@ class Solution_inPlaceReplace(object):
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
         
-class Solution_2(object): # python: sys.maxint   超过最大值的列表将会导致memory overflow
+class Solution(object): # python: sys.maxint   超过最大值的列表将会导致memory overflow
     def plusOne(self, digits):
         """
         :type digits: List[int]
@@ -40,16 +40,10 @@ class Solution_2(object): # python: sys.maxint   超过最大值的列表将会�
         """
         # 将输入整数列表先拼接成整数，加1后，再变回整数列表 
         digitsStr = ''
-        retList = []
         for i in digits:
             digitsStr += str(i)
-        #print "digitStr is", digitsStr
-        retList = list(str(int(digitsStr) + 1))
-        
-        for i in range(len(retList)) :
-            retList[i] = int(retList[i])
-        #print "retList:", retList
-        return retList
+
+        return [int(x) for x in list(str(int(digitsStr) + 1))]
                 
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
@@ -113,7 +107,7 @@ class Solution_best(object): # Best answer
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
 
-class Solution(object): # Answer from Leetcode sharing
+class Solution_4(object): # Answer from Leetcode sharing
     def plusOne(self, digits):
         for i in xrange(len(digits)-1, -1, -1):
             if digits[i] < 9:
@@ -124,6 +118,74 @@ class Solution(object): # Answer from Leetcode sharing
         
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution_wuli(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """ 
+        
+        n = len(digits)
+        v = 0L
+        for i in range(n):
+            v += digits[i] * 10 ** (n-i-1)
+
+        v+=1
+        print "v = %s" % v
+        s = str(v)
+        lst = list(s)
+        lst = [int(x) for x in lst]
+        print lst
+        return lst
+        
+    def myUnitTest(self,n):
+        return Solution.plusOne(self, n)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 
 mySolution = Solution()
 
@@ -138,6 +200,7 @@ class Test_Solution_myUnitTest(unittest.TestCase):
 		self.assertEqual(mySolution.myUnitTest([1,1,9,9]), [1,2,0,0])
 		self.assertEqual(mySolution.myUnitTest([9, 2, 2, 3, 3, 7, 2, 0, 3, 6, 8, 5, 4, 7, 7, 5, 8, 0, 7]), [ 9, 2, 2, 3, 3, 7, 2, 0, 3, 6, 8, 5, 4, 7, 7, 5, 8, 0, 8])
 		self.assertEqual(mySolution.myUnitTest([9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]), [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+		self.assertEqual(mySolution.myUnitTest([9,9,9,9,9,9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9,9,9,9,9,9,9,9,9,9,9]), [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
 																
 suite = unittest.TestLoader().loadTestsFromTestCase(Test_Solution_myUnitTest)
 unittest.TextTestRunner(verbosity=2).run(suite)
