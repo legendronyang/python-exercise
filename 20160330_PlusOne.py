@@ -16,13 +16,12 @@ class Solution1(object):
         index = -1
         while True:
             if digits[index] == 9:
+                digits[index] = 0
                 if abs(index) == len(digits):
-                    digits[index] = 0
                     digits.insert(0,1)
                     break
                 else:
                 #当前位改为0，继续循环；否则，当前为加1，退出循环
-                    digits[index] = 0
                     index = index - 1    
             else:
                 digits[index] += 1
