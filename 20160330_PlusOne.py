@@ -119,23 +119,6 @@ class Solution_4(object): # Answer from Leetcode sharing
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Solution_wuli(object):
     def plusOne(self, digits):
         """
@@ -159,34 +142,6 @@ class Solution_wuli(object):
     def myUnitTest(self,n):
         return Solution.plusOne(self, n)
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                
 mySolution = Solution()
 
 import unittest
