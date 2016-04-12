@@ -42,7 +42,6 @@ class Solution(object):
         return Solution.isHappy(self, n)
 
 mySolution = Solution()
-mySolution.myUnitTest(19)
 
 import unittest
 class Test_Solution_myUnitTest(unittest.TestCase):
